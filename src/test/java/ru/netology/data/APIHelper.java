@@ -66,11 +66,11 @@ public class APIHelper {
         return cardsBalances;
     }
 
-    public static void sendQueryToTransfer (String token, APIHelper.APITransferInfo transferInfo, int statusCode) {
-       given()
+    public static void sendQueryToTransfer(String token, APIHelper.APITransferInfo transferInfo, int statusCode) {
+        given()
                 .spec(requestSpec)
                 .header("Authorization", "Bearer " + token)
-               .body(transferInfo)
+                .body(transferInfo)
                 .when()
                 .post("/api/transfer")
                 .then().log().all()
